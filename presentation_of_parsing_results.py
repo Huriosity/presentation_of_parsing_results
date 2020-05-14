@@ -103,6 +103,11 @@ def result_picture():
          """
         cp = nltk.RegexpParser(grammar).parse(new_doc).draw()
 
+def info():
+    messagebox.askquestion("Help", "1. Нажмите Открыть файл.\n"
+                                   "2. Выберите файл с предложением\n"
+                                   "3. Нажмите кнопку 'Ok'.\n", type='ok')
+
 root = Tk()
 root.title("Lab 3")
 root.resizable(width=True, height=True)
@@ -114,5 +119,6 @@ open_file_btn.grid(row=0, column=0)
 file_path_entry = Entry(root,width=40)
 file_path_entry.grid(row=0, column=1)
 Button(text="Submit", width=10, command=result_picture).grid(row=0, column=2)
+Button(text="info?", width=10, command=info).grid(row=0,column=3)
 
 root.mainloop()
